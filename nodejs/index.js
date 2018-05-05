@@ -15,8 +15,9 @@ const HOST = '0.0.0.0';
 const app = express();
 app.get('/', (req, res) => {
     redis.get('time', function (err, result) {
-        console.log(12341234);
-        res.send('XX Hello world<br/> ' + 'Hostname: ' + os.hostname() + ' Time: ' + result);
+        let msg = 'Node Dockerized - Hostname: ' + os.hostname() + ' - Time: ' + result;
+        console.log(msg);
+        res.send(msg);
     });
 });
 

@@ -14,3 +14,13 @@ services:
             - redis
         links:
             - redis
+    python:
+        build: ./python
+        ports: 
+            - "4000:4000"
+        volumes:
+            - "./python:/usr/src/app"
+        depends_on:
+            - redis
+        links:
+            - redis
