@@ -24,3 +24,13 @@ services:
             - redis
         links:
             - redis
+    php-fpm:
+        build: ./php-fpm
+        ports: 
+            - "5000:5000"
+        volumes:
+            - "./php-fpm:/usr/src/app"
+        depends_on:
+            - redis
+        links:
+            - redis
